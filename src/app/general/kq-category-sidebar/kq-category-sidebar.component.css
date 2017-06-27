@@ -1,0 +1,26 @@
+#category-body{
+  width: 112%
+}
+
+#category-list-item {
+  border-bottom: 1px solid rgba(157, 157, 157, 0.32);
+  height: 40px;
+}
+
+#category-list {
+  list-style-type: none;
+  width: 100%;
+}
+
+#category-list-item-text{
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+#category-list-item > img{
+  float:right;
+  height:30px;
+  width:30px;
+  margin-top: 5px;
+}
