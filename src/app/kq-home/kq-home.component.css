@@ -1,42 +1,43 @@
-#main-logo{
+#kq-main-logo {
   height: 150px;
   width: 150px;
   margin-left: -31px;
 }
 
-#user-logo{
+#kq-user-logo {
   height: 150px;
   width: 150px;
   margin-right: -31px;
 }
 
-
-#category-box > div > img{
+#kq-category-box > div > img {
   width: 120px;
   height: 120px
 }
 
-#category-box-toggle{
+#kq-category-box-toggle {
   font-size: 20px;
   font-weight: 900;
   color: white
 }
 
-
 /*css class between toggle*/
-
-.category-tab-selected{
-  background-color: #43c0f6
+.kq-category-tab-selected {
+  background-color: #43c0f6;
+  font-size: 16px;
+  padding: 4px 20px 2px;
 }
 
-.category-tab-not-selected{
-  background-color:  #ebebeb;
-}
+.kq-category-tab-not-selected {
+  background-color: #ebebeb;
+  font-size: 16px;
+  padding: 4px 20px 2px;
 
-/*for toggle slider*/
+
+}
 
 /* The switch - the box around the slider */
-.switch {
+.kq-switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -44,10 +45,12 @@
 }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.kq-switch input {
+  display: none;
+}
 
 /* The slider */
-.slider {
+.kq-slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -59,7 +62,7 @@
   transition: .4s;
 }
 
-.slider:before {
+.kq-slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -71,28 +74,59 @@
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked + .kq-slider {
   background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus + .kq-slider {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked + .kq-slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
 /* Rounded sliders */
-.slider.round {
+.kq-slider.round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.kq-slider.round:before {
   border-radius: 50%;
 }
 
+#kq-search-box-parent {
+  height: 150px;
+}
+
+#kq-global-search-parent {
+  margin-top: 50px
+}
+
+#category-panel-parent {
+  height: 520px;
+}
+
+#kq-category-item {
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-left: 30%;
+  height: 50px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+#kq-category-box-toggle-parent {
+  height: 150px;
+  margin-top: 70px;
+}
 
 
+.kq-category-text{
+  text-align: -webkit-center;
+  margin-top: 30px;
+  font-size: 18px;
+  color: rgba(8, 8, 8, 0.52);
+}

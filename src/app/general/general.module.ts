@@ -2,7 +2,10 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AutoCompleteModule} from 'primeng/primeng';
 import {KqGlobalSearchComponent} from './kq-global-search/kq-global-search.component';
-import { KqCategorySidebarComponent } from './kq-category-sidebar/kq-category-sidebar.component';
+import {KqCategorySidebarComponent} from './kq-category-sidebar/kq-category-sidebar.component';
+import {KqNavbarComponent} from './kq-navbar/kq-navbar.component';
+import {KqProductPanelComponent} from './kq-product-panel/kq-product-panel.component';
+import {KqProductThumbComponent} from './kq-product-thumb/kq-product-thumb.component';
 
 @NgModule({
   imports: [
@@ -11,11 +14,16 @@ import { KqCategorySidebarComponent } from './kq-category-sidebar/kq-category-si
   ],
   declarations: [
     KqGlobalSearchComponent,
-    KqCategorySidebarComponent
+    KqCategorySidebarComponent,
+    KqNavbarComponent,
+    KqProductPanelComponent,
+    KqProductThumbComponent
   ],
   exports: [
     KqGlobalSearchComponent,
-    KqCategorySidebarComponent
+    KqCategorySidebarComponent,
+    KqNavbarComponent,
+    KqProductPanelComponent
   ]
 })
 export class GeneralModule {

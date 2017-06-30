@@ -1,0 +1,19 @@
+#kq-product-panel-parent {
+  height: 300px
+}
+
+#kq-product-panel-nav{
+  padding-top: 10px;
+
+}
+#kq-product-panel-box{
+  height:100%
+}
+
+#kq-panel-title{
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+

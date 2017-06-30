@@ -1,0 +1,14 @@
+#kq-nav-bar {
+  height: 40px;
+}
+
+.nav-pill > span {
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+
+.nav-pill {
+  padding-top: 10px;
+}

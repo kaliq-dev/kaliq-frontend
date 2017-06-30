@@ -1,90 +1,107 @@
 <!--top panel / search and logo-->
-<div style="" class="col-md-12">
-  <div class="col-md-3">
+<div class="col-md-12 col-lg-12">
+  <div class="col-md-3 col-lg-2">
   </div>
-  <div class="col-md-6" style="height:150px">
-    <div class="col-md-2" style="">
-      <img src="/assets/images/main-logo.jpg" id="main-logo">
+  <div class="col-md-6 col-lg-8" id="kq-search-box-parent">
+    <div class="col-md-2 col-lg-1">
+      <img src="/assets/images/main-logo.jpg" id="kq-main-logo">
     </div>
-    <div class="col-md-8" style="">
-      <div style="margin-top:50px">
+    <div class="col-md-8 col-lg-10">
+      <span style="margin-left:40px">
+        Same day Delivery For Orders Before <span class="orange">12:00</span>
+      </span>
+      <div id="kq-global-search-parent">
         <app-kq-global-search></app-kq-global-search>
       </div>
     </div>
-    <div class="col-md-2">
-      <img src="/assets/images/user-logo.png" id="user-logo">
+    <div class="col-md-2 col-lg-1" style="    margin-left: -50px;">
+      <img src="/assets/images/user-logo.png" id="kq-user-logo">
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 col-lg-2">
   </div>
 </div>
 
 <!--top navigation panel-->
-<div class="col-md-12 blue-background" style="height:40px">
-</div>
+<app-kq-navbar></app-kq-navbar>
+
 
 <!--category panel-->
-<div class="col-md-12" style="height:520px">
-  <div class="col-md-3">
-    <div class="col-md-4">
+<div class="col-md-12 col-lg-12" id="category-panel-parent">
+  <div class="col-md-3 col-lg-2">
+    <div class="col-md-4 col-lg-2">
     </div>
-    <div class="col-md-8" style="height:500px">
+    <div class="col-md-8 col-lg-10">
       <app-kq-category-sidebar></app-kq-category-sidebar>
     </div>
   </div>
-  <div class="col-md-6 grey-background" style="height:520px">
+  <div class="col-md-6 col-lg-8 grey-background" style="height:520px">
 
-    <div class="col-md-12" style="height:150px;
-    margin-top: 70px;">
-      <div id="category-box-toggle" >
-        <!--<label class="switch">-->
-          <!--<input type="checkbox">-->
-          <!--<div class="slider round">-->
-          <!--</div>-->
-        <!--</label>-->
-        <span style="border: 1px solid black;border-radius: 10px;margin-left:30%;height:50px;cursor:pointer">
-          <span [ngClass]="{ 'category-tab-selected' : categoryOptionState === 'essentials', 'category-tab-not-selected': categoryOptionState === 'all' }" (click)="toggleCategoryOption()" style="margin-left: 10px;margin-right: 10px;border-radius: 10px">Essentials</span>
-          <span [ngClass]="{ 'category-tab-not-selected' : categoryOptionState === 'essentials', 'category-tab-selected': categoryOptionState === 'all' }" (click)="toggleCategoryOption()" style="border-radius: 10px;margin-left: 10px;margin-right: 10px;">All Categories</span>
+    <div class="col-md-12 col-lg-12" id="kq-category-box-toggle-parent">
+      <div id="kq-category-box-toggle">
+        <span id="kq-category-item">
+          <span
+            [ngClass]="{ 'kq-category-tab-selected' : categoryOptionState === 'essentials', 'kq-category-tab-not-selected': categoryOptionState === 'all' }"
+            (click)="toggleCategoryOption()"
+            style="margin-left: 10px;margin-right: 10px;border-radius: 10px">Essentials</span>
+          <span
+            [ngClass]="{ 'kq-category-tab-not-selected' : categoryOptionState === 'essentials', 'kq-category-tab-selected': categoryOptionState === 'all' }"
+            (click)="toggleCategoryOption()" style="border-radius: 10px;margin-left: 10px;margin-right: 10px;">All Categories</span>
         </span>
       </div>
     </div>
 
-    <div class="col-md-12" id="category-box">
-      <div class="col-md-2">
+    <div class="col-md-12 col-lg-12" id="kq-category-box">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/CEMENT.png">
+        <div class="kq-category-text">
+          <span>CEMENT</span>
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/STEEL.png">
+        <div class="kq-category-text">
+          <span>STEEL</span>
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/SAND.png">
+        <div class="kq-category-text">
+          <span>SAND</span>
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/BRICKS_BLOCKS.png">
+        <div class="kq-category-text">
+          <span>BLOCK</span>
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/READYMIX.png">
+        <div class="kq-category-text">
+          <span>READY MIX</span>
+        </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-lg-2">
         <img src="/assets/images/ICONS/WOOD_LUMBER.png">
+        <div class="kq-category-text">
+          <span>LUMBER</span>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 col-lg-2">
   </div>
 </div>
 
-
 <!--product panel of product boxes-->
-<div class="col-md-12" style="border: 1px solid red" *ngFor="let x of [0,1,2,3,4]">
-  <div class="col-md-3">
-    Left Space
+<div class="col-md-12 col-lg-12" *ngFor="let x of ['Brands','Deal Of The Day', 'Best Sellers']">
+  <div class="col-md-3 col-lg-2">
   </div>
-  <div class="col-md-6" style="border:1px solid red;height:300px">
-    Middle Space
+  <div class="col-md-6 col-lg-8" style="padding-left: 0%;padding-right: 0%;">
+    <app-kq-product-panel [title]="x"></app-kq-product-panel>
   </div>
-  <div class="col-md-3">
-    Right Space
+  <div class="col-md-3 col-lg-2">
   </div>
 </div>
 
