@@ -1,6 +1,7 @@
 <div id="kq-category-body">
   <ul id="kq-category-list">
-    <li *ngFor="let x of categoryList" class="grey-background" id="kq-category-list-item">
+    <li *ngFor="let x of categoryList" class="grey-background" id="kq-category-list-item"
+        (mouseenter)="mouseEnterCategoryItem(x)" (mouseleave)="mouseLeaveCategoryItem(x)">
       <span id="kq-category-list-item-text"> {{x.name}} </span>
       <img src="/assets/images/ICONS/{{ x.img }}">
     </li>

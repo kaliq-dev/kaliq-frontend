@@ -1,24 +1,24 @@
 <!--top panel / search and logo-->
 <div class="col-md-12 col-lg-12">
-  <div class="col-md-3 col-lg-2">
+  <div class="col-md-3 col-lg-3">
   </div>
-  <div class="col-md-6 col-lg-8" id="kq-search-box-parent">
-    <div class="col-md-2 col-lg-1">
+  <div class="col-md-6 col-lg-6" id="kq-search-box-parent">
+    <div class="col-md-2 col-lg-2">
       <img src="/assets/images/main-logo.jpg" id="kq-main-logo">
     </div>
-    <div class="col-md-8 col-lg-10">
-      <span style="margin-left:40px">
+    <div class="col-md-8 col-lg-8">
+      <span style="">
         Same day Delivery For Orders Before <span class="orange">12:00</span>
       </span>
       <div id="kq-global-search-parent">
         <app-kq-global-search></app-kq-global-search>
       </div>
     </div>
-    <div class="col-md-2 col-lg-1" style="    margin-left: -50px;">
+    <div class="col-md-2 col-lg-2" style="margin-left: 0px;">
       <img src="/assets/images/user-logo.png" id="kq-user-logo">
     </div>
   </div>
-  <div class="col-md-3 col-lg-2">
+  <div class="col-md-3 col-lg-3">
   </div>
 </div>
 
@@ -28,14 +28,14 @@
 
 <!--category panel-->
 <div class="col-md-12 col-lg-12" id="category-panel-parent">
-  <div class="col-md-3 col-lg-2">
-    <div class="col-md-4 col-lg-2">
+  <div class="col-md-3 col-lg-3">
+    <div class="col-md-4 col-lg-4">
     </div>
-    <div class="col-md-8 col-lg-10">
+    <div class="col-md-8 col-lg-8">
       <app-kq-category-sidebar></app-kq-category-sidebar>
     </div>
   </div>
-  <div class="col-md-6 col-lg-8 grey-background" style="height:520px">
+  <div class="col-md-6 col-lg-6 grey-background" style="height:520px">
 
     <div class="col-md-12 col-lg-12" id="kq-category-box-toggle-parent">
       <div id="kq-category-box-toggle">
@@ -90,18 +90,18 @@
       </div>
     </div>
   </div>
-  <div class="col-md-3 col-lg-2">
+  <div class="col-md-3 col-lg-3">
   </div>
 </div>
 
 <!--product panel of product boxes-->
 <div class="col-md-12 col-lg-12" *ngFor="let x of ['Brands','Deal Of The Day', 'Best Sellers']">
-  <div class="col-md-3 col-lg-2">
+  <div class="col-md-3 col-lg-3">
   </div>
-  <div class="col-md-6 col-lg-8" style="padding-left: 0%;padding-right: 0%;">
+  <div class="col-md-6 col-lg-6" style="padding-left: 0%;padding-right: 0%;">
     <app-kq-product-panel [title]="x"></app-kq-product-panel>
   </div>
-  <div class="col-md-3 col-lg-2">
+  <div class="col-md-3 col-lg-3">
   </div>
 </div>
 

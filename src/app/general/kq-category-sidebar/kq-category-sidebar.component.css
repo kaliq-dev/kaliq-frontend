@@ -9,8 +9,10 @@
 }
 
 #kq-category-list-item:hover {
-  background-color: #ccc;
+  background-color:rgba(204, 204, 204, 0.54);;
   cursor:pointer;
+  font-weight: 700;
+  /*color: white*/
 }
 
 #kq-category-list {
