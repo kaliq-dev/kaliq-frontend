@@ -12,7 +12,6 @@
   background-color:rgba(204, 204, 204, 0.54);;
   cursor:pointer;
   font-weight: 700;
-  /*color: white*/
 }
 
 #kq-category-list {
@@ -24,7 +23,6 @@
   font-size: 15px;
   margin-left: 10px;
   margin-top: 10px;
-
 }
 
 #kq-category-list-item > img {
@@ -32,4 +30,6 @@
   height: 30px;
   width: 30px;
   margin-top: 5px;
+  margin-right: 5px;
+
 }

@@ -5,8 +5,12 @@
   </div>
 
   <div class="col-md-12 col-lg-12 grey-background" id="kq-product-panel-box">
-    <div class="col-md-2 col-lg-2" *ngFor="let x of [0,1,2,3,4,5]">
-      <app-kq-product-thumb></app-kq-product-thumb>
+    <div *ngFor="let x of brand_img_list;let i=index">
+      <div style="margin-right: 1%;
+    margin-left: 2%;" [ngClass]="{ 'col-md-2': i!=0, 'col-md-2 col-md-offset-1': i==0 }" class="col-md-2 col-lg-2">
+        <app-kq-product-thumb [thumbnail]="x"></app-kq-product-thumb>
+      </div>
     </div>
+
   </div>
 </div>

@@ -11,6 +11,8 @@ export class KqProductPanelComponent implements OnInit, OnChanges {
 
   @Input() title: string;
 
+  public brand_img_list = ['download.png','2.jpg','mfg-falcon.jpg','og_logo.png','sst-logo.png'];
+
   constructor() {
   }
 

@@ -11,9 +11,7 @@ export class KqHomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 
   toggleCategoryOption(){
     if(this.categoryOptionState === 'essentials'){
@@ -22,5 +20,4 @@ export class KqHomeComponent implements OnInit {
       this.categoryOptionState = 'essentials';
     }
   }
-
 }

@@ -1,0 +1,37 @@
+<div class="col-md-12">
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-10">
+    <h1>All Products</h1>
+    <h2>Filter and Add to Cart</h2>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 col-md-3" *ngFor="let product of productList">
+        <div class="thumbnail">
+          <img src="http://autoscuolaunica.it/wp-content/uploads/2017/06/dummy.jpg" alt="...">
+          <div class="caption">
+            <h5>{{ product?.name }}</h5>
+
+            <ul>
+              <li>
+                <strong>Brand: </strong> {{ product?.brand_name }}
+              </li>
+              <li>
+                <strong>Supplier: </strong> {{ product?.supplier_name }}
+              </li>
+              <li>
+                <strong>Category: </strong> {{ product?.category_name }}
+              </li>
+            </ul>
+
+            <p><a href="#" class="btn btn-warning" role="button">Add To Cart</a> <a href="#" class="btn btn-default"
+                                                                                    role="button">Button</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-kq-product-thumb',
@@ -7,12 +7,21 @@ import {Component, OnInit} from '@angular/core';
 })
 export class KqProductThumbComponent implements OnInit {
 
+  @Input() thumbnail: any;
+  public thumb: any;
+
   constructor() {
   }
 
   ngOnInit() {
   }
 
+
+  ngOnChanges(changes: SimpleChanges) {
+    if ('thumbnail' in changes) {
+      this.thumb = changes['thumbnail'].currentValue;
+    }
+  }
 
 
 }
