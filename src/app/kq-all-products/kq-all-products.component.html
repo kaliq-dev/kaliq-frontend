@@ -1,5 +1,39 @@
 <div class="col-md-12">
   <div class="col-md-2">
+    <!--filter for category-->
+    <div>
+      <br>
+      <strong>Category</strong>
+      <hr>
+      <div *ngFor="let category of categoryList" style="font-size: x-small">
+        <input (change)="categoryFilter($event,category?.id)" type="checkbox" id="{{ category?.id }}"
+               value="{{ category?.id }}">
+        <label for="{{ category?.id }}">{{ category?.name }}</label>
+      </div>
+    </div>
+
+    <!--filter for brand-->
+    <div>
+      <br>
+      <strong>Brand</strong>
+      <hr>
+      <div *ngFor="let brand of brandList" style="font-size: x-small">
+        <input (change)="brandFilter($event,brand?.id)" type="checkbox" id="{{ brand?.id }}" value="{{ brand?.id }}">
+        <label for="{{ brand?.id }}">{{ brand?.name }}</label>
+      </div>
+    </div>
+
+    <!--filter for supplier-->
+    <div>
+      <br>
+      <strong>Supplier</strong>
+      <hr>
+      <div *ngFor="let supplier of supplierList" style="font-size: x-small">
+        <input (change)="supplierFilter($event,supplier?.id)" type="checkbox" id="{{ supplier?.id }}"
+               value="{{ supplier?.id }}">
+        <label for="{{ supplier?.id }}">{{ supplier?.name }}</label>
+      </div>
+    </div>
 
   </div>
   <div class="col-md-10">
@@ -12,7 +46,6 @@
           <img src="http://autoscuolaunica.it/wp-content/uploads/2017/06/dummy.jpg" alt="...">
           <div class="caption">
             <h5>{{ product?.name }}</h5>
-
             <ul>
               <li>
                 <strong>Brand: </strong> {{ product?.brand_name }}
@@ -24,9 +57,7 @@
                 <strong>Category: </strong> {{ product?.category_name }}
               </li>
             </ul>
-
-            <p><a href="#" class="btn btn-warning" role="button">Add To Cart</a> <a href="#" class="btn btn-default"
-                                                                                    role="button">Button</a>
+            <p><a href="#" class="btn btn-warning" role="button"> <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Add To Cart</a>
             </p>
           </div>
         </div>
