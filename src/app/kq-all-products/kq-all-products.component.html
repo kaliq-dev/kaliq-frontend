@@ -6,9 +6,9 @@
       <strong>Category</strong>
       <hr>
       <div *ngFor="let category of categoryList" style="font-size: x-small">
-        <input (change)="categoryFilter($event,category?.id)" type="checkbox" id="{{ category?.id }}"
+        <input (change)="categoryFilter($event,category?.id)" type="checkbox" id="category_{{ category?.id }}"
                value="{{ category?.id }}">
-        <label for="{{ category?.id }}">{{ category?.name }}</label>
+        <label for="category_{{ category?.id }}">{{ category?.name }}</label>
       </div>
     </div>
 
@@ -18,8 +18,9 @@
       <strong>Brand</strong>
       <hr>
       <div *ngFor="let brand of brandList" style="font-size: x-small">
-        <input (change)="brandFilter($event,brand?.id)" type="checkbox" id="{{ brand?.id }}" value="{{ brand?.id }}">
-        <label for="{{ brand?.id }}">{{ brand?.name }}</label>
+        <input (change)="brandFilter($event,brand?.id)" type="checkbox" id="brand_{{ brand?.id }}"
+               value="{{ brand?.id }}">
+        <label for="brand_{{ brand?.id }}">{{ brand?.name }}</label>
       </div>
     </div>
 
@@ -29,9 +30,9 @@
       <strong>Supplier</strong>
       <hr>
       <div *ngFor="let supplier of supplierList" style="font-size: x-small">
-        <input (change)="supplierFilter($event,supplier?.id)" type="checkbox" id="{{ supplier?.id }}"
+        <input (change)="supplierFilter($event,supplier?.id)" type="checkbox" id="supplier_{{ supplier?.id }}"
                value="{{ supplier?.id }}">
-        <label for="{{ supplier?.id }}">{{ supplier?.name }}</label>
+        <label for="supplier_{{ supplier?.id }}">{{ supplier?.name }}</label>
       </div>
     </div>
 
@@ -57,7 +58,8 @@
                 <strong>Category: </strong> {{ product?.category_name }}
               </li>
             </ul>
-            <p><a href="#" class="btn btn-warning" role="button"> <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> Add To Cart</a>
+            <p><a href="#" class="btn btn-warning" role="button"> <i class="glyphicon glyphicon-shopping-cart"
+                                                                     aria-hidden="true"></i> Add To Cart</a>
             </p>
           </div>
         </div>

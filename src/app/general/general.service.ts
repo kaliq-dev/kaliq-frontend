@@ -36,10 +36,10 @@ export class GeneralService {
   }
 
   getProductByBrand(data: any) {
-    return this.http.post(this.brand_api + 'filter-by-brand', data).map(res => res.json());
+    return this.http.post(this.product_api + 'filter-by-brand', data).map(res => res.json());
   }
 
   getProductBySupplier(data: any) {
-    return this.http.post(this.supplier_api + 'filter-by-supplier', data).map(res => res.json());
+    return this.http.post(this.product_api + 'filter-by-supplier', data).map(res => res.json());
   }
 }

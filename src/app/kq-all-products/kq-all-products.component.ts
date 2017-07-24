@@ -44,6 +44,8 @@ export class KqAllProductsComponent implements OnInit {
   public brandList: Brand[] = [];
 
   private categoryFilterList = [];
+  private brandFilterList = [];
+  private supplierFilterList = [];
 
   private productMasterList: Product[] = [];
 
@@ -52,6 +54,7 @@ export class KqAllProductsComponent implements OnInit {
 
   ngOnInit() {
     this.categoryFilterList = [];
+    this.brandFilterList = [];
 
     this.getAllProducts();
     this.getAllBrand();
@@ -155,31 +158,72 @@ export class KqAllProductsComponent implements OnInit {
 
   supplierFilter(event: any, id: number) {
     if (event.target.checked) {
-
+      this.supplierFilterList.push(id);
     } else {
+      let index = this.supplierFilterList.indexOf(id);
+      if (index > -1) {
+        this.supplierFilterList.splice(index, 1);
+      }
+    }
 
+    if (this.supplierFilterList.length > 0) {
+      let data = {
+        filterList: this.supplierFilterList
+      }
+
+      this.generalService.getProductBySupplier(data)
+        .subscribe(
+          (res) => {
+            let idToFilter = _.pluck(res.data, 'id');
+            this.productList = [];
+            _.each(this.productMasterList, (product) => {
+              if (_.contains(idToFilter, product.id)) {
+                this.productList.push(product);
+              }
+            })
+          },
+          (err) => {
+            console.log("Error in suplier filter");
+          }
+        )
+    } else {
+      this.getAllProducts();
     }
   }
 
   brandFilter(event: any, id: number) {
     if (event.target.checked) {
-
+      this.brandFilterList.push(id);
     } else {
-
+      let index = this.brandFilterList.indexOf(id);
+      if (index > -1) {
+        this.brandFilterList.splice(index, 1);
+      }
     }
-  }
 
-  //get specifc supplier / brand / category 's product
-  getProductByCategory(id: number) {
+    if (this.brandFilterList.length > 0) {
+      let data = {
+        filterList: this.brandFilterList
+      }
 
-  }
-
-  getProductBySupplier(id: number) {
-
-  }
-
-  getProductByBrand(id: number) {
-
+      this.generalService.getProductByBrand(data)
+        .subscribe(
+          (res) => {
+            let idToFilter = _.pluck(res.data, 'id');
+            this.productList = [];
+            _.each(this.productMasterList, (product) => {
+              if (_.contains(idToFilter, product.id)) {
+                this.productList.push(product);
+              }
+            })
+          },
+          (err) => {
+            console.log("Error in brand filter");
+          }
+        )
+    } else {
+      this.getAllProducts();
+    }
   }
 
 }
