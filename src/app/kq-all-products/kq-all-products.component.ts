@@ -1,35 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 import {GeneralService} from "../general/general.service";
 import * as _ from 'underscore';
+import {Brand} from '../general/Brand';
+import {Supplier} from '../general/Supplier';
+import {Category} from '../general/Category';
+import {Product} from '../general/Product';
 
 declare var require: any;
-
-interface Product {
-  id?: number;
-  name?: string;
-  price?: number;
-  vat?: number;
-  image_list?: string[];
-  supplier_name?: string;
-  brand_name?: string;
-  category_name?: string;
-  image?: string;
-}
-
-interface Category {
-  id?: number;
-  name?: string;
-}
-
-interface Supplier {
-  id?: number;
-  name?: string;
-}
-
-interface Brand {
-  id?: number;
-  name?: string;
-}
 
 @Component({
   selector: 'app-kq-all-products',
@@ -49,12 +27,21 @@ export class KqAllProductsComponent implements OnInit {
 
   private productMasterList: Product[] = [];
 
-  constructor(private generalService: GeneralService) {
+  private shoppingCart: Product[] = [];
+  public isShowCart: boolean = false;
+
+  constructor(private generalService: GeneralService, private router: Router) {
   }
 
   ngOnInit() {
+    localStorage.setItem("shopping-cart", "");
+
+    this.isShowCart = false;
+    this.shoppingCart = [];
+
     this.categoryFilterList = [];
     this.brandFilterList = [];
+    this.supplierFilterList = [];
 
     this.getAllProducts();
     this.getAllBrand();
@@ -70,6 +57,16 @@ export class KqAllProductsComponent implements OnInit {
           if (res.status && res.count > 0) {
             this.productMasterList = res.data;
             this.productList = res.data;
+
+            this.generalService.getBase64Images({data: this.productList})
+              .subscribe(
+                (res) => {
+                  this.productList = res.data;
+                },
+                (err) => {
+                  console.log("Error in getting base64 images");
+                }
+              )
           }
         },
         (err) => {
@@ -123,6 +120,8 @@ export class KqAllProductsComponent implements OnInit {
 
   // filters for category / supplier / brand
   categoryFilter(event: any, id: number) {
+    this.isShowCart = false;
+
     if (event.target.checked) {
       this.categoryFilterList.push(id);
     } else {
@@ -157,6 +156,8 @@ export class KqAllProductsComponent implements OnInit {
   }
 
   supplierFilter(event: any, id: number) {
+    this.isShowCart = false;
+
     if (event.target.checked) {
       this.supplierFilterList.push(id);
     } else {
@@ -192,6 +193,8 @@ export class KqAllProductsComponent implements OnInit {
   }
 
   brandFilter(event: any, id: number) {
+    this.isShowCart = false;
+
     if (event.target.checked) {
       this.brandFilterList.push(id);
     } else {
@@ -224,6 +227,37 @@ export class KqAllProductsComponent implements OnInit {
     } else {
       this.getAllProducts();
     }
+  }
+
+
+  addToCart(product: Product) {
+    product.isAddToCart = true;
+    if (this.shoppingCart.length > 0) {
+      if (!_.findWhere(this.shoppingCart, product)) {
+        this.shoppingCart.push(product);
+      }
+    } else {
+      this.shoppingCart.push(product);
+    }
+  }
+
+
+  showCart() {
+    if (this.shoppingCart.length > 0) {
+      localStorage.setItem('shopping-cart', JSON.stringify(this.shoppingCart));
+      this.router.navigate(['/shopping-cart']);
+    }
+  }
+
+  goToAllProducts() {
+    this.isShowCart = false;
+  }
+
+  removeItem(product) {
+    product.isAddToCart = false;
+    this.shoppingCart = this.shoppingCart.filter((item) => {
+      return item.id != product.id;
+    });
   }
 
 }

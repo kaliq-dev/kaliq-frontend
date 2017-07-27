@@ -1,3 +1,59 @@
-<p>
-  kq-shopping-cart works!
-</p>
+<div class="col-md-12">
+  <div class="col-md-8">
+    <h3> My Cart </h3>
+    <hr>
+
+    <div class="panel panel-info" *ngFor="let product of shoppingCart">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{ product?.name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <img src="{{ product?.image_list[0] }}" alt="...">
+            </a>
+          </div>
+          <strong>Brand: </strong> {{ product?.brand_name }} <br><br>
+          <strong>Supplier: </strong> {{ product?.supplier_name }} <br><br>
+          <strong>Category: </strong> {{ product?.category_name }} <br><br>
+          <h4><strong> Price: {{ product?.price }} OMR </strong></h4>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3> Price Details </h3>
+    <hr>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-6">
+          <h3 class="panel-title">Total Price ({{ shoppingCart?.length }} items)</h3>
+          <br>
+          <h3 class="panel-title">Delivery Charges</h3>
+          <br>
+          <h3 class="panel-title">Amount Payable</h3>
+        </div>
+        <div class="col-md-6">
+          <h3 class="panel-title" style="float:right">
+            <strong> {{ totalPrice }} OMR </strong>
+          </h3>
+          <br><br>
+          <h3 class="panel-title" style="float:right;color:green">
+            <strong>FREE
+            </strong>
+          </h3>
+          <br><br>
+          <h3 class="panel-title" style="float:right">
+              <strong> {{ totalPrice }} OMR </strong>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

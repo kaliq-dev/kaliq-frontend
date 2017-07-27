@@ -42,4 +42,9 @@ export class GeneralService {
   getProductBySupplier(data: any) {
     return this.http.post(this.product_api + 'filter-by-supplier', data).map(res => res.json());
   }
+
+  //get images in base64
+  getBase64Images(data: any) {
+    return this.http.post(environment.api_server + 'get-base64-images', data).map((res) => res.json());
+  }
 }

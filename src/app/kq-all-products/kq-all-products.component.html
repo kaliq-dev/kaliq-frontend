@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12" *ngIf="!isShowCart">
   <div class="col-md-2">
     <!--filter for category-->
     <div>
@@ -35,16 +35,27 @@
         <label for="supplier_{{ supplier?.id }}">{{ supplier?.name }}</label>
       </div>
     </div>
-
   </div>
   <div class="col-md-10">
     <h1>All Products</h1>
     <h2>Filter and Add to Cart</h2>
-    <br>
+    <button (click)="showCart()" class="btn btn-warning" style="float:right">
+      <i
+        class="glyphicon glyphicon-shopping-cart"
+        aria-hidden="true"></i>
+      <span> MY CART
+
+      <span style="margin-left:5px" *ngIf="shoppingCart?.length > 0"> {{ shoppingCart?.length}} </span>
+        <span style="margin-left:5px" *ngIf="shoppingCart?.length <= 0"> 0 </span>
+
+      </span>
+    </button>
+
+    <br><br>
     <div class="row">
       <div class="col-sm-6 col-md-3" *ngFor="let product of productList">
         <div class="thumbnail">
-          <img src="http://autoscuolaunica.it/wp-content/uploads/2017/06/dummy.jpg" alt="...">
+          <img width="200px" height="200px" src="{{ product?.image_list[0] }}" alt="...">
           <div class="caption">
             <h5>{{ product?.name }}</h5>
             <ul>
@@ -58,13 +69,21 @@
                 <strong>Category: </strong> {{ product?.category_name }}
               </li>
             </ul>
-            <p><a href="#" class="btn btn-warning" role="button"> <i class="glyphicon glyphicon-shopping-cart"
-                                                                     aria-hidden="true"></i> Add To Cart</a>
+            <p *ngIf="!product?.isAddToCart"><a href="javascript:void(0)" (click)="addToCart(product)"
+                                                class="btn btn-warning" role="button"> <i
+              class="glyphicon glyphicon-shopping-cart"
+              aria-hidden="true"></i> Add To Cart</a>
             </p>
+            <div *ngIf="product?.isAddToCart" class="alert alert-success" role="alert">
+              <span class="glyphicon glyphicon-ok"> </span>
+              Added To Cart
+
+              <span (click)="removeItem(product)"  class="glyphicon glyphicon-remove" style="color:red;float:right;cursor:pointer">
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
