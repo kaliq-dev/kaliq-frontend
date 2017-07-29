@@ -5,6 +5,6 @@
 
 export const environment = {
   production: false,
-  api_server : 'http://localhost:5000/api/'
-  // api_server: 'http://48c9d950.ngrok.io/api/'
+  // api_server : 'http://localhost:5000/api/'
+  api_server: 'http://4093bfbe.ngrok.io/api/'
 };

@@ -3,6 +3,8 @@ import {NgModule} from "@angular/core";
 import {KqHomeComponent} from "./kq-home/kq-home.component";
 import {KqShoppingCartComponent} from "./kq-shopping-cart/kq-shopping-cart.component";
 import {KqAllProductsComponent} from "./kq-all-products/kq-all-products.component";
+import {KqUserLoginComponent} from './kq-user-auth/kq-user-login/kq-user-login.component';
+import {KqUserRegComponent} from './kq-user-auth/kq-user-reg/kq-user-reg.component';
 
 // TO DO : implement lazy loading
 const appRoutes: Routes = [
@@ -17,6 +19,14 @@ const appRoutes: Routes = [
   {
     path: 'all-products',
     component: KqAllProductsComponent
+  },
+  {
+    path: 'user-login',
+    component: KqUserLoginComponent
+  },
+  {
+    path: 'user-register',
+    component: KqUserRegComponent
   }
 ];
 

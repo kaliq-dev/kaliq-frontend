@@ -10,6 +10,7 @@ import {KqShoppingCartComponent} from './kq-shopping-cart/kq-shopping-cart.compo
 import {GeneralService} from './general/general.service';
 import {KqAllProductsComponent} from './kq-all-products/kq-all-products.component';
 import {CustomHttpService} from "./http.service";
+import {KqUserAuthModule} from './kq-user-auth/kq-user-auth.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {CustomHttpService} from "./http.service";
     BrowserModule,
     GeneralModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    KqUserAuthModule
   ],
   providers: [
     CustomHttpService,

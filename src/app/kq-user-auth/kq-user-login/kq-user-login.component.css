@@ -1,0 +1,12 @@
+#kaliq-logo {
+  position: inherit;
+  top: 50%;
+  left: 40%;
+  margin-left: -(X/2) px;
+  margin-top: -(Y/2) px;
+  width: 100px
+}
+
+#box{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.39), 0 6px 20px 0 rgba(0,0,0,0.19);
+}

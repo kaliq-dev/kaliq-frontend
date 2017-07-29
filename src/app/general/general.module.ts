@@ -6,11 +6,14 @@ import {KqCategorySidebarComponent} from './kq-category-sidebar/kq-category-side
 import {KqNavbarComponent} from './kq-navbar/kq-navbar.component';
 import {KqProductPanelComponent} from './kq-product-panel/kq-product-panel.component';
 import {KqProductThumbComponent} from './kq-product-thumb/kq-product-thumb.component';
+import {RouterModule} from '@angular/router';
+
 
 @NgModule({
   imports: [
     CommonModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    RouterModule
   ],
   declarations: [
     KqGlobalSearchComponent,
